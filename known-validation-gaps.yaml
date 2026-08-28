@@ -1,0 +1,5 @@
+# Exact combined validator + independently executed companion failures.
+# Decrement-only: records may be consumed or removed, never added outside the
+# sanctioned pending→active path. Empty at bootstrap — no RuleSpec content
+# exists yet.
+validate_failures: {}

@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-08-28",
+  "jurisdiction": "am",
+  "purpose": "Pinned comparison-oracle and supporting-source references for Republic of Armenia Axiom coverage. Armenia has no incumbent tax-benefit engine; references are published fiscal-incidence studies used as validation bands, not executable oracles.",
+  "oracles": [
+    {
+      "id": "ceq-wp43-armenia",
+      "name": "CEQ Working Paper 43: Fiscal Incidence in Armenia (Younger & Khachatryan, 2017)",
+      "url": "https://commitmentoequity.org/publications-ceq-working-paper-series/",
+      "role": "Fiscal-incidence bands from ILCS 2011 under the CEQ methodology; also published as a chapter in Inchauste & Lustig (eds.), The Distributional Impact of Taxes and Transfers (World Bank, 2017).",
+      "coverage": ["income_tax", "social_contributions", "direct_transfers", "indirect_taxes"],
+      "kind": "published_study"
+    },
+    {
+      "id": "worldbank-pit-reform-2019",
+      "name": "World Bank: Assessing the Distributional Impacts of PIT Reform in Armenia (2019)",
+      "url": "https://documents.worldbank.org",
+      "role": "CEQ-model microsimulation on ILCS 2014 aged to 2018; reference bands for the 2020 flat-tax transition (e.g., disposable-income Gini path under the reform).",
+      "coverage": ["income_tax"],
+      "kind": "published_study"
+    },
+    {
+      "id": "worldbank-fiscal-incidence-2025",
+      "name": "World Bank: From Policy to Impact — Fiscal Incidence Analysis in Armenia (2025)",
+      "url": "https://documents.worldbank.org",
+      "role": "Most recent fiscal-incidence bands; closest vintage to the populace-am 2024 build year.",
+      "coverage": ["income_tax", "social_contributions", "direct_transfers"],
+      "kind": "published_study"
+    }
+  ],
+  "notes": "Exact document URLs, retrieval dates, and shas are recorded when each study is pinned as a fixture. PolicyEngine-style engines are absent by design: no policyengine-am exists and none should be created."
+}
