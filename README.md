@@ -9,19 +9,23 @@ stamp duties, state benefits, and related eligibility rules — with official
 source provenance and comparison references from published fiscal-incidence
 studies.
 
-**Status: source-backed bootstrap.** Signed Armenian source scopes now cover
-the latest consolidated tax-benefit sources, including scheduled expressions,
-and bounded 2024 PIT, funded-pension, and minimum-wage evidence. The immutable
-corpus release is proposed but not yet published, so this repository still
-carries no toolchain binding and no RuleSpec content. The corpus-first path to
-strict validation is documented in `docs/encoding-charter.md`.
+**Status: corpus-bound encoding workspace.** Signed Armenian source scopes now
+cover the latest consolidated tax-benefit sources, including scheduled
+expressions, and bounded 2024 PIT, funded-pension, and minimum-wage evidence.
+The immutable `am-rulespec-2026-08-30` release is signed, registered, publicly
+mirrored, and bound here by name and content hash for strict validation. It is
+not activated into the production serving map. RuleSpec content remains empty
+until the supervised, signed encoder campaign documented in
+`docs/encoding-charter.md`. The pinned shared generated-content guard requires
+signed apply manifests on future RuleSpec changes.
 
 ## Scope
 
 - `am/{legislation,policies,regulations,statutes}/`: the four atomic RuleSpec
   roots for codes, delegated instruments, and source-grounded policy modules.
-- `am/programs/`: declarative axiom-compose ProgramSpecs when a composed
-  Armenian program is added. Programs are not atomic `rulespec/v1` modules.
+- `am/programs/`: reserved for declarative axiom-compose ProgramSpecs. It stays
+  empty until a dedicated toolchain change enables the programs-root generated
+  content guard; programs are not atomic `rulespec/v1` modules.
 - `src/rulespec_am/`: repository tooling; executable Python never lives under
   `am/programs/`.
 - `data/corpus/`: repository-local corpus metadata when a binding is

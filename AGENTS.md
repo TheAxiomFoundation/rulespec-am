@@ -6,16 +6,20 @@
 This repo stores Republic of Armenia RuleSpec source registry materials, oracle
 references, and encoded policy rules.
 
-## Status: source-backed bootstrap (pre-strict)
+## Status: corpus-bound encoding workspace (strict)
 
 The first Armenian legal sources are in axiom-corpus as two signed ingest
 scopes: the tax-benefit core (`axiom-corpus#628`) and a bounded 2024 evidence
-pack (`axiom-corpus#629`). The proposed `am-rulespec-2026-08-30` selector is
-still unpublished, so this repository intentionally has **no
-`.axiom/toolchain.toml` binding and no RuleSpec content**. The remaining
-sequence is corpus publication → a dedicated gated toolchain/workflow PR →
-supervised encoding. See `docs/encoding-charter.md`. Until the binding lands,
-no RuleSpec content may be added under `am/**`.
+pack (`axiom-corpus#629`). The signed `am-rulespec-2026-08-30` release is
+registered, publicly mirrored, and bound by immutable name and content hash in
+`.axiom/toolchain.toml`; it is not activated into the production serving map.
+This repository intentionally has no RuleSpec content until the supervised
+encoder campaign. See `docs/encoding-charter.md`. Every future RuleSpec content
+change under `am/{legislation,policies,regulations,statutes}/**` must be
+generator-produced and carry its signed apply manifest; the pinned shared
+workflow's generated-content guard enforces that invariant, and the repository
+tests pin the guard enabled. `am/programs/` remains empty until a dedicated
+change enables and pins the separate programs-root guard.
 
 ## Do
 
@@ -38,8 +42,9 @@ no RuleSpec content may be added under `am/**`.
   `am/regulations/`, or `am/statutes/` with companion `.test.yaml` files —
   through the supervised encoder with encoding manifests only, once the
   toolchain is bound.
-- Add only declarative `.yaml` ProgramSpecs under `am/programs/`; keep Python
-  tooling under `src/rulespec_am/`.
+- Keep `am/programs/` empty until a dedicated toolchain PR enables the
+  programs-root generated-content guard. Once enabled, add only declarative
+  `.yaml` ProgramSpecs there; keep Python tooling under `src/rulespec_am/`.
 - Keep large source payloads outside Git unless they are small, necessary
   official extracts.
 - Read TheAxiomFoundation/.github#39 before opening any PR here.

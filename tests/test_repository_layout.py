@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
+import subprocess
 import tomllib
 from pathlib import Path
 
@@ -15,6 +17,11 @@ IGNORED_ROOT_DIRS = {
     ".pytest_cache",
     ".ruff_cache",
     ".venv",
+    # The shared validator checks immutable toolchain repositories out here
+    # before running this repository's tests. Tracked paths are rejected by a
+    # separate workflow step, so ignoring this transient directory does not
+    # weaken the committed layout contract.
+    "_axiom",
     "__pycache__",
 }
 ALLOWED_ROOT_DIRS = {
@@ -81,16 +88,30 @@ def test_root_inventory_is_allowed() -> None:
     assert not files - ALLOWED_ROOT_FILES
 
 
+def test_transient_axiom_workspace_has_no_tracked_paths() -> None:
+    tracked = subprocess.run(
+        ["git", "ls-files", "-z", "--", "_axiom"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    assert tracked == b""
+
+
+def test_programs_remain_empty_until_program_guard_is_enabled() -> None:
+    tracked_content = [
+        path
+        for path in (ROOT / "am" / "programs").rglob("*")
+        if path.is_file() and path.name != ".gitkeep"
+    ]
+    assert tracked_content == []
+
+
 def test_structure_manifest_matches_repository_contract() -> None:
     manifest = yaml.safe_load((ROOT / ".axiom/repository-structure.yaml").read_text())
     assert manifest["version"] == 1
     assert set(manifest["allowed_root_directories"]) == ALLOWED_ROOT_DIRS
     assert set(manifest["allowed_root_files"]) == ALLOWED_ROOT_FILES
-
-
-def test_no_rulespec_content_before_toolchain_binding() -> None:
-    if not (ROOT / ".axiom/toolchain.toml").is_file():
-        assert rulespec_files() == []
 
 
 def test_every_rulespec_has_companion_test() -> None:
@@ -163,9 +184,60 @@ def test_source_map_does_not_overstate_2024_tax_code_coverage() -> None:
     )
     assert funded_pensions_2024[0][0] <= "2024-01-01"
     assert funded_pensions_2024[-1][1] == "2025-01-01"
-    assert payload["release_candidate"]["status"] == "proposed_not_published"
+    release = payload["release_candidate"]
+    assert release["status"] == "registered_publicly_mirrored_not_activated"
+    assert release["content_sha256"] == (
+        "19f443c7a9deec74b68ddc031d1c74bb2977753538fe2597d4c655609bc79706"
+    )
 
 
-def test_registry_remains_experimental_during_bootstrap() -> None:
+def test_toolchain_binds_exact_registered_release_and_waiver_set() -> None:
+    toolchain = tomllib.loads((ROOT / ".axiom/toolchain.toml").read_text())[
+        "toolchain"
+    ]
+    release = json.loads(
+        (ROOT / "data/coverage/tax-benefit-source-map.json").read_text()
+    )["release_candidate"]
+    assert toolchain == {
+        "axiom_corpus_release": release["name"],
+        "axiom_corpus_release_content_sha256": release["content_sha256"],
+        "validation_waiver_set_sha256": (
+            "e8caa37b6c2cf4558bfe10119ff8a6eae587e278ab349508f372e0e408d72b6e"
+        ),
+    }
+    assert toolchain["validation_waiver_set_sha256"] == hashlib.sha256(
+        (ROOT / "known-validation-gaps.yaml").read_bytes()
+    ).hexdigest()
+
+
+def test_repository_checks_use_reviewed_strict_pins() -> None:
+    workflow = yaml.load(
+        (ROOT / ".github/workflows/repository-checks.yml").read_text(),
+        Loader=yaml.BaseLoader,
+    )
+    assert workflow["on"] == {
+        "push": {"branches": ["main"]},
+        "pull_request": {"branches": ["main"]},
+    }
+    validate = workflow["jobs"]["validate"]
+    assert validate["uses"] == (
+        "TheAxiomFoundation/.github/.github/workflows/validate-rulespec.yml@"
+        "842c69d6aa62a0d75a4da850fabc3d0df20701d7"
+    )
+    assert validate["secrets"] == "inherit"
+    assert validate["with"] == {
+        "axiom-encode-ref": "d248fc99f8713a12a3dfa91348d992f4c58df43b",
+        "axiom-rules-engine-ref": (
+            "fb735bf47a32a4e8af1ecc144c9a1ab382da984b"
+        ),
+        "axiom-corpus-ref": "4f57160eb68c5941789ffab2ec991cd007a8c15b",
+        "rulespec-us-ref": "0f291b367bf7e15555f9973112278c5cbf221653",
+        "validate-roots": "auto",
+        "run-generated-guard": "true",
+        "guard-programs-root": "false",
+    }
+
+
+def test_registry_remains_experimental_during_encoding() -> None:
     payload = tomllib.loads((ROOT / ".axiom/registry.toml").read_text())
     assert payload == {"registry": {"app_visibility": "experimental"}}

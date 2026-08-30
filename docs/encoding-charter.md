@@ -27,8 +27,9 @@ coverage, not adapter code" — rulespec-nz precedent).
    PRs merge-commit, never squash. The first two scopes landed in
    axiom-corpus#628 and #629.
 3. **Release cut.** Publish an immutable signed `am-rulespec-*` corpus release
-   from corpus main. The selector is proposed in axiom-corpus#630; merging it
-   is a publication action and remains maintainer-gated.
+   from corpus main. `am-rulespec-2026-08-30` was signed and registered by
+   axiom-corpus#630, then publicly mirrored for consumer validation. It was
+   deliberately not activated into the production serving map.
 4. **Toolchain binding.** Dedicated gated PR adding `.axiom/toolchain.toml`
    (release name, content sha, waiver-set sha) and the shared SHA-pinned
    validate workflow. Never combined with content changes.
@@ -60,8 +61,8 @@ is backlog in `data/coverage/`.
 
 - [x] ARLIS snapshot tooling in axiom-corpus
 - [x] Initial core and bounded 2024 evidence ingestion with signed manifests
-- [ ] Publish the proposed `am-rulespec-2026-08-30` release
-- [ ] Toolchain-binding PR (dedicated, gated)
+- [x] Sign, register, and publicly mirror `am-rulespec-2026-08-30` (not activated)
+- [x] Toolchain-binding PR (dedicated, gated)
 - [ ] Supervised encoder campaign for the v1 slice
 - [ ] Oracle band extraction from CEQ WP 43 (2017), World Bank PIT-reform
       microsimulation (2019), World Bank fiscal-incidence report (2025)
