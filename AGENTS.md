@@ -6,15 +6,16 @@
 This repo stores Republic of Armenia RuleSpec source registry materials, oracle
 references, and encoded policy rules.
 
-## Status: bootstrap (pre-strict)
+## Status: source-backed bootstrap (pre-strict)
 
-No Armenian provisions exist in axiom-corpus yet, so this repository has **no
-`.axiom/toolchain.toml` binding and no RuleSpec content**. The sequence is
-corpus-first: official source snapshots → corpus ingestion with signed manifests
-→ an immutable signed `am-rulespec-*` release → a dedicated gated PR that adds
-the toolchain binding and the shared validate workflow → supervised encoding.
-See `docs/encoding-charter.md`. Until the toolchain lands, no `am/**` content
-may be added.
+The first Armenian legal sources are in axiom-corpus as two signed ingest
+scopes: the tax-benefit core (`axiom-corpus#628`) and a bounded 2024 evidence
+pack (`axiom-corpus#629`). The proposed `am-rulespec-2026-08-30` selector is
+still unpublished, so this repository intentionally has **no
+`.axiom/toolchain.toml` binding and no RuleSpec content**. The remaining
+sequence is corpus publication → a dedicated gated toolchain/workflow PR →
+supervised encoding. See `docs/encoding-charter.md`. Until the binding lands,
+no RuleSpec content may be added under `am/**`.
 
 ## Do
 
@@ -25,10 +26,14 @@ may be added.
   text; translations are working aids, never the encoded source.
 - Use oracle references as comparison fixtures, not as legal authority.
 - Keep oracle references pinned in `data/oracles/oracle-index.json`.
-- Land official source snapshots in axiom-corpus with URL, retrieval date, and
-  sha provenance before any encoding cites them. No `extract-am-*` ingestion
-  path exists in axiom-corpus yet; building one is a charter work item — do not
-  invent or assume one.
+- Cite only official source snapshots that have landed in axiom-corpus with
+  URL, retrieval date, sha provenance, and signed ingest manifests. The ARLIS
+  adapter exists; extend it in axiom-corpus when a required expression is
+  absent instead of inventing or hand-copying a source.
+- Preserve the temporal-coverage distinction in
+  `data/coverage/tax-benefit-source-map.json`: the funded-pension evidence spans
+  2024 continuously, while the 2024 Tax Code evidence contains only Q1 and
+  year-end endpoints.
 - Add atomic RuleSpec under `am/legislation/`, `am/policies/`,
   `am/regulations/`, or `am/statutes/` with companion `.test.yaml` files —
   through the supervised encoder with encoding manifests only, once the

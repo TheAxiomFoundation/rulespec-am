@@ -1,0 +1,5 @@
+# Declared oracle-coverage debt; ratchets both ways.
+version: 1
+issue: "https://github.com/TheAxiomFoundation/rulespec-am/issues/1"
+ceiling: 0
+entries: []
