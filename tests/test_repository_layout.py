@@ -16,6 +16,11 @@ IGNORED_ROOT_DIRS = {
     ".pytest_cache",
     ".ruff_cache",
     ".venv",
+    # The shared validator checks immutable toolchain repositories out here
+    # before running this repository's tests. Tracked paths are rejected by a
+    # separate workflow step, so ignoring this transient directory does not
+    # weaken the committed layout contract.
+    "_axiom",
     "__pycache__",
 }
 ALLOWED_ROOT_DIRS = {
