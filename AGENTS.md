@@ -15,7 +15,9 @@ registered, publicly mirrored, and bound by immutable name and content hash in
 `.axiom/toolchain.toml`; it is not activated into the production serving map.
 This repository intentionally has no RuleSpec content until the supervised
 encoder campaign. See `docs/encoding-charter.md`. Every future content change
-under `am/**` must be generator-produced and carry its signed apply manifest.
+under `am/**` must be generator-produced and carry its signed apply manifest;
+the pinned shared workflow's generated-content guard enforces that invariant,
+and the repository tests pin the guard enabled.
 
 ## Do
 

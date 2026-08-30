@@ -16,7 +16,8 @@ The immutable `am-rulespec-2026-08-30` release is signed, registered, publicly
 mirrored, and bound here by name and content hash for strict validation. It is
 not activated into the production serving map. RuleSpec content remains empty
 until the supervised, signed encoder campaign documented in
-`docs/encoding-charter.md`.
+`docs/encoding-charter.md`. The pinned shared generated-content guard requires
+signed apply manifests on future RuleSpec changes.
 
 ## Scope
 

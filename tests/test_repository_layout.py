@@ -94,11 +94,6 @@ def test_structure_manifest_matches_repository_contract() -> None:
     assert set(manifest["allowed_root_files"]) == ALLOWED_ROOT_FILES
 
 
-def test_no_rulespec_content_before_toolchain_binding() -> None:
-    if not (ROOT / ".axiom/toolchain.toml").is_file():
-        assert rulespec_files() == []
-
-
 def test_every_rulespec_has_companion_test() -> None:
     for path in rulespec_files():
         assert path.with_name(path.stem + ".test.yaml").exists()
