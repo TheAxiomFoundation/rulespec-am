@@ -1,0 +1,4 @@
+# App-surface visibility for this repository's encodings.
+# Public visibility requires the listing gates documented in the project.
+[registry]
+app_visibility = "experimental"

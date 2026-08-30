@@ -1,18 +1,19 @@
 # Encoding charter
 
 Chartered 2026-08-28 alongside PolicyEngine/microcosm#814 (populace-am).
-Armenia is the rules leg of a Microcosm country build: a calibrated household
-frame from public ILCS microdata and admin targets, with this repository
-supplying the tax-benefit rules through the Axiom rules engine adapter
-("a new country adds coverage, not adapter code" — rulespec-nz precedent).
+Armenia is the rules leg of a Microcosm country build: a diagnostic household
+frame calibrated to public demographic, household, and employment aggregates
+from an imported donor support pool, with this repository supplying the
+tax-benefit rules through the Axiom rules engine adapter ("a new country adds
+coverage, not adapter code" — rulespec-nz precedent).
 
 ## Why Armenia
 
 - Smallest encoding surface of any country in the org so far: one flat
   schedular PIT, two payroll-adjacent contributions, one stamp duty, a small
   benefit set.
-- Public base microdata (ArmStat ILCS, every year 2004–2024) means the
-  downstream population build can be fully open.
+- Public aggregate controls allow an open calibration layer even though the
+  diagnostic currently has no Armenian unit-record survey base.
 - Institutional demand is documented: Armenia sits in the OECD EG DNA and
   EG DHW expert groups without being able to submit distributional results.
 
@@ -20,11 +21,14 @@ supplying the tax-benefit rules through the Axiom rules engine adapter
 
 1. **Source snapshots.** Retrieve the priority instruments (see
    `docs/sources-and-provenance.md`) from ARLIS as dated, sha-hashed snapshots.
-2. **Corpus ingestion.** Build the ARLIS ingestion path in axiom-corpus; land
+   The initial core and bounded 2024 evidence snapshots are complete.
+2. **Corpus ingestion.** Use the ARLIS ingestion path in axiom-corpus; land
    snapshots with signed ingest manifests from a clean root checkout. Corpus
-   PRs merge-commit, never squash. **Gate: manifest signing ceremony (Max).**
+   PRs merge-commit, never squash. The first two scopes landed in
+   axiom-corpus#628 and #629.
 3. **Release cut.** Publish an immutable signed `am-rulespec-*` corpus release
-   from corpus main.
+   from corpus main. The selector is proposed in axiom-corpus#630; merging it
+   is a publication action and remains maintainer-gated.
 4. **Toolchain binding.** Dedicated gated PR adding `.axiom/toolchain.toml`
    (release name, content sha, waiver-set sha) and the shared SHA-pinned
    validate workflow. Never combined with content changes.
@@ -54,10 +58,9 @@ is backlog in `data/coverage/`.
 
 ## Open items
 
-- [ ] ARLIS snapshot tooling in axiom-corpus (`extract-am-*` path does not
-      exist yet)
-- [ ] Ingestion + signing ceremony (**Max**)
-- [ ] `am-rulespec-*` release cut
+- [x] ARLIS snapshot tooling in axiom-corpus
+- [x] Initial core and bounded 2024 evidence ingestion with signed manifests
+- [ ] Publish the proposed `am-rulespec-2026-08-30` release
 - [ ] Toolchain-binding PR (dedicated, gated)
 - [ ] Supervised encoder campaign for the v1 slice
 - [ ] Oracle band extraction from CEQ WP 43 (2017), World Bank PIT-reform

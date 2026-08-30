@@ -7,7 +7,7 @@
 | ARLIS — Legal Information System of the Republic of Armenia | https://www.arlis.am | Official consolidated legal texts (Armenian). The authoritative text for every encoding. |
 | State Revenue Committee (SRC) | https://www.src.am | Tax Code publication, declaration administration, taxpayer guidance. |
 | Ministry of Finance | https://minfin.am | State budget execution reports (revenue actuals). |
-| ArmStat — Statistical Committee | https://armstat.am | National accounts, ILCS microdata, register-based wage statistics (calibration side, see PolicyEngine/microcosm#814). |
+| ArmStat — Statistical Committee | https://armstat.am | National accounts, published ILCS tables and aggregates, and register-based wage statistics (calibration side, see PolicyEngine/microcosm#814). |
 | Official gazette (Pashtonakan Teghekagir) via ARLIS | https://www.arlis.am | Promulgation records for effective-date provenance. |
 
 ## Language rule
@@ -21,11 +21,17 @@ rulespec-de, rulespec-be).
 
 ## Provenance rule
 
-No provision may be cited by an encoding until it exists in axiom-corpus, or
-the official source snapshot lands alongside with URL, retrieval date, and sha
-provenance (TheAxiomFoundation/.github#39, rule 7). No `extract-am-*` path
-exists in axiom-corpus today; the ingestion tooling for ARLIS snapshots is a
-charter work item.
+No provision may be cited by an encoding until it exists in a signed,
+repository-bound axiom-corpus release with URL, retrieval date, and sha
+provenance (TheAxiomFoundation/.github#39, rule 7). The ARLIS adapter and the
+first signed Armenian scopes landed in axiom-corpus#628 and #629. Missing legal
+expressions must be ingested there; they may not be reconstructed inside this
+repository.
+
+The 2024 funded-pension pack spans the year continuously. The 2024 Tax Code
+pack is deliberately bounded to the Q1 and year-end expressions and therefore
+does not establish a complete date-selectable 2024 Tax Code timeline. The
+machine-readable inventory is `data/coverage/tax-benefit-source-map.json`.
 
 ## Priority instruments (v1 slice)
 

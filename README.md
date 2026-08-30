@@ -9,10 +9,12 @@ stamp duties, state benefits, and related eligibility rules — with official
 source provenance and comparison references from published fiscal-incidence
 studies.
 
-**Status: bootstrap.** No Armenian provisions exist in axiom-corpus yet, so
-this repository carries no toolchain binding and no RuleSpec content. The
-corpus-first path to strict validation is documented in
-`docs/encoding-charter.md`.
+**Status: source-backed bootstrap.** Signed Armenian source scopes now cover
+the latest consolidated tax-benefit sources, including scheduled expressions,
+and bounded 2024 PIT, funded-pension, and minimum-wage evidence. The immutable
+corpus release is proposed but not yet published, so this repository still
+carries no toolchain binding and no RuleSpec content. The corpus-first path to
+strict validation is documented in `docs/encoding-charter.md`.
 
 ## Scope
 
@@ -22,8 +24,8 @@ corpus-first path to strict validation is documented in
   Armenian program is added. Programs are not atomic `rulespec/v1` modules.
 - `src/rulespec_am/`: repository tooling; executable Python never lives under
   `am/programs/`.
-- `data/corpus/`: source inventory and provision slices promoted from official
-  Armenian source ingestion.
+- `data/corpus/`: repository-local corpus metadata when a binding is
+  published; canonical provisions remain in axiom-corpus.
 - `data/oracles/`: pinned references to comparison studies and datasets used to
   cross-check Axiom outputs.
 - `data/coverage/`: full-country coverage backlog and status.
@@ -40,7 +42,8 @@ declarations. The source registry and provenance rules are in
 
 Chartered alongside PolicyEngine/microcosm#814 (populace-am): Armenia
 participates in the OECD distributional-accounts expert groups without being
-able to submit results, and its tax-benefit system — a flat schedular personal
-income tax and a small set of contributions and benefits — is among the
-smallest encoding surfaces of any country. This repository provides the rules
-leg for that build through the Axiom rules engine adapter.
+able to submit results. Microcosm now has a diagnostic Armenian frame calibrated
+to public aggregates using an imported donor support pool; it does not claim
+Armenian household survey microdata. This repository provides the legal-rules
+leg through the Axiom rules engine adapter, beginning with a comparatively
+compact PIT, contribution, and benefit surface.
