@@ -23,8 +23,9 @@ signed apply manifests on future RuleSpec changes.
 
 - `am/{legislation,policies,regulations,statutes}/`: the four atomic RuleSpec
   roots for codes, delegated instruments, and source-grounded policy modules.
-- `am/programs/`: declarative axiom-compose ProgramSpecs when a composed
-  Armenian program is added. Programs are not atomic `rulespec/v1` modules.
+- `am/programs/`: reserved for declarative axiom-compose ProgramSpecs. It stays
+  empty until a dedicated toolchain change enables the programs-root generated
+  content guard; programs are not atomic `rulespec/v1` modules.
 - `src/rulespec_am/`: repository tooling; executable Python never lives under
   `am/programs/`.
 - `data/corpus/`: repository-local corpus metadata when a binding is

@@ -14,10 +14,12 @@ pack (`axiom-corpus#629`). The signed `am-rulespec-2026-08-30` release is
 registered, publicly mirrored, and bound by immutable name and content hash in
 `.axiom/toolchain.toml`; it is not activated into the production serving map.
 This repository intentionally has no RuleSpec content until the supervised
-encoder campaign. See `docs/encoding-charter.md`. Every future content change
-under `am/**` must be generator-produced and carry its signed apply manifest;
-the pinned shared workflow's generated-content guard enforces that invariant,
-and the repository tests pin the guard enabled.
+encoder campaign. See `docs/encoding-charter.md`. Every future RuleSpec content
+change under `am/{legislation,policies,regulations,statutes}/**` must be
+generator-produced and carry its signed apply manifest; the pinned shared
+workflow's generated-content guard enforces that invariant, and the repository
+tests pin the guard enabled. `am/programs/` remains empty until a dedicated
+change enables and pins the separate programs-root guard.
 
 ## Do
 
@@ -40,8 +42,9 @@ and the repository tests pin the guard enabled.
   `am/regulations/`, or `am/statutes/` with companion `.test.yaml` files —
   through the supervised encoder with encoding manifests only, once the
   toolchain is bound.
-- Add only declarative `.yaml` ProgramSpecs under `am/programs/`; keep Python
-  tooling under `src/rulespec_am/`.
+- Keep `am/programs/` empty until a dedicated toolchain PR enables the
+  programs-root generated-content guard. Once enabled, add only declarative
+  `.yaml` ProgramSpecs there; keep Python tooling under `src/rulespec_am/`.
 - Keep large source payloads outside Git unless they are small, necessary
   official extracts.
 - Read TheAxiomFoundation/.github#39 before opening any PR here.

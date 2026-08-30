@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import subprocess
 import tomllib
 from pathlib import Path
 
@@ -85,6 +86,25 @@ def test_root_inventory_is_allowed() -> None:
     }
     assert not directories - ALLOWED_ROOT_DIRS
     assert not files - ALLOWED_ROOT_FILES
+
+
+def test_transient_axiom_workspace_has_no_tracked_paths() -> None:
+    tracked = subprocess.run(
+        ["git", "ls-files", "-z", "--", "_axiom"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    assert tracked == b""
+
+
+def test_programs_remain_empty_until_program_guard_is_enabled() -> None:
+    tracked_content = [
+        path
+        for path in (ROOT / "am" / "programs").rglob("*")
+        if path.is_file() and path.name != ".gitkeep"
+    ]
+    assert tracked_content == []
 
 
 def test_structure_manifest_matches_repository_contract() -> None:
