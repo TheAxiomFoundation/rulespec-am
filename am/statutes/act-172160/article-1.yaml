@@ -1,0 +1,220 @@
+format: rulespec/v1
+module:
+  proof_validation:
+    required: true
+  source_verification:
+    corpus_citation_path: am/statute/act-172160/article-1
+    source_sha256: eb100f7a594df65a5fd8c56e1bcd8c860407e749ea9041762b2b5c31c3995cec
+  summary: 'Հայաստանի Հանրապետությունում նվազագույն ամսական աշխատավարձը սահմանել 75000
+    դրամ:'
+rules:
+- name: minimum_monthly_wage
+  kind: parameter
+  dtype: Money
+  period: Month
+  unit: AMD
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: amount
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: նվազագույն ամսական աշխատավարձը սահմանել 75000 դրամ
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '75000'
+- name: article_identifier
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», 1-ին
+    հոդված
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 1-ին հոդվածը փոփ.
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '1'
+- name: first_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 11.11.05 ՀՕ-221-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '221'
+- name: second_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 28.11.06 ՀՕ-200-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '200'
+- name: third_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 05.11.07 ՀՕ-252-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '252'
+- name: fourth_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 27.11.08 ՀՕ-200-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '200'
+- name: fifth_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 16.11.10 ՀՕ-164-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '164'
+- name: sixth_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 13.11.12 ՀՕ-200-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '200'
+- name: seventh_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 20.06.13 ՀՕ-61-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '61'
+- name: eighth_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 12.12.13 ՀՕ-187-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '187'
+- name: ninth_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 01.12.14 ՀՕ-205-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '205'
+- name: tenth_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 19.11.19 ՀՕ-223-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '223'
+- name: eleventh_recorded_amending_act_registration_number
+  kind: parameter
+  dtype: Integer
+  source: Հայաստանի Հանրապետության օրենք «Նվազագույն ամսական աշխատավարձի մասին», հոդված
+    1-ի փոփոխությունների պատմություն
+  metadata:
+    proof:
+      atoms:
+      - path: versions[0].formula
+        kind: parameter
+        source:
+          corpus_citation_path: am/statute/act-172160/article-1
+          excerpt: 07.12.22 ՀՕ-501-Ն
+  versions:
+  - effective_from: '0001-01-01'
+    formula: '501'

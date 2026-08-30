@@ -1,0 +1,22 @@
+- name: minimum_monthly_wage_and_recorded_amendment_identifiers_snapshot
+  period: 2023-01
+  input: {}
+  output:
+    am:statutes/act-172160/article-1#minimum_monthly_wage: 75000
+    am:statutes/act-172160/article-1#article_identifier: 1
+    am:statutes/act-172160/article-1#first_recorded_amending_act_registration_number: 221
+    am:statutes/act-172160/article-1#second_recorded_amending_act_registration_number: 200
+    am:statutes/act-172160/article-1#third_recorded_amending_act_registration_number: 252
+    am:statutes/act-172160/article-1#fourth_recorded_amending_act_registration_number: 200
+    am:statutes/act-172160/article-1#fifth_recorded_amending_act_registration_number: 164
+    am:statutes/act-172160/article-1#sixth_recorded_amending_act_registration_number: 200
+    am:statutes/act-172160/article-1#seventh_recorded_amending_act_registration_number: 61
+    am:statutes/act-172160/article-1#eighth_recorded_amending_act_registration_number: 187
+    am:statutes/act-172160/article-1#ninth_recorded_amending_act_registration_number: 205
+    am:statutes/act-172160/article-1#tenth_recorded_amending_act_registration_number: 223
+    am:statutes/act-172160/article-1#eleventh_recorded_amending_act_registration_number: 501
+- name: minimum_monthly_wage_snapshot
+  period: 2023-01
+  input: {}
+  output:
+    am:statutes/act-172160/article-1#minimum_monthly_wage: 75000

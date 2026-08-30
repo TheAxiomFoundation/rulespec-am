@@ -1,0 +1,96 @@
+{
+  "applied_files": [
+    {
+      "path": "am/statutes/act-172160/article-1.yaml",
+      "sha256": "82ddbca3ac5026c9bd8b5c9fa61ea4ecc273a9a50f8c8c66fd0117aa6f5d1690"
+    },
+    {
+      "path": "am/statutes/act-172160/article-1.test.yaml",
+      "sha256": "c5ae61198e8fab039fb2f054f33c51001e4c4744ddd07f924f2a1310cd9bd03b"
+    }
+  ],
+  "axiom_encode_git": {
+    "commit": "d248fc99f8713a12a3dfa91348d992f4c58df43b",
+    "dirty_tracked": false,
+    "identity_source": "trusted-runtime-attestation",
+    "root": "/opt/axiom-verification/python/runtime-attestation.json",
+    "version": "0.2.1748",
+    "version_commit": "d248fc99f8713a12a3dfa91348d992f4c58df43b"
+  },
+  "axiom_encode_version": "0.2.1748",
+  "backend": "openai",
+  "citation": "am/statute/act-172160/article-1",
+  "context_manifest_file": "/home/runner/work/_temp/generated/target/_eval_workspaces/openai-gpt-5.6-terra/am-statute-act-172160-article-1/workspace/context-manifest.json",
+  "context_manifest_sha256": "2e94a070a3a2c81ea23772088d94d3ed138bf409b80c8877da5c23e6b5cfda92",
+  "generated_at": "2026-08-30T18:01:38.750211+00:00",
+  "generated_output_file": "/home/runner/work/_temp/generated/target/openai-gpt-5.6-terra/statutes/act-172160/article-1.yaml",
+  "generated_output_root": "/home/runner/work/_temp/generated/target",
+  "generated_output_sha256": "82ddbca3ac5026c9bd8b5c9fa61ea4ecc273a9a50f8c8c66fd0117aa6f5d1690",
+  "generation_prompt_sha256": "bb4f8972f8c5e161ab782ea237bd04752fd910f8627dd0f214cd3aa09f0e2733",
+  "model": "gpt-5.6-terra",
+  "run_id": "170d8201",
+  "runner": "openai-gpt-5.6-terra",
+  "schema_version": "axiom-encode/applied-rulespec/v5",
+  "signature": {
+    "algorithm": "ed25519-domain-v1",
+    "key_id": "sha256:24a78725a23b1c83cfc38bdc22f75401d8008e7a8477796b55179d1fc79c4d9a",
+    "value": "469For8qvS37B/BiyIjnr+Qo5ytSURdF6virztb9Ujmr/xkjPWjyNKcMp8KhBSIZPhn+111YN5WhMrsXfCk8BA=="
+  },
+  "source_attestation": {
+    "component_rows": [],
+    "corpus_release": "am-rulespec-2026-08-30",
+    "corpus_release_content_sha256": "19f443c7a9deec74b68ddc031d1c74bb2977753538fe2597d4c655609bc79706",
+    "corpus_release_selector_sha256": "69cf5d0eb4c8755d9f883fc40f541fb8c1dc3bc37f15ea5b18af8c855b3bf6fd",
+    "corpus_source": "local",
+    "expression_date": "2022-12-23",
+    "generation_input_sha256": "eb100f7a594df65a5fd8c56e1bcd8c860407e749ea9041762b2b5c31c3995cec",
+    "provision_file": "data/corpus/provisions/am/statute/2026-08-30-am-rulespec-source-pack.jsonl",
+    "provision_file_sha256": "7d698f39f898ad91c2c53b1a215651359642b54dcdcadc7d97d4846f3acab2dc",
+    "requested_corpus_citation_path": "am/statute/act-172160/article-1",
+    "resolved_corpus_citation_path": "am/statute/act-172160/article-1",
+    "resolved_text_sha256": "eb100f7a594df65a5fd8c56e1bcd8c860407e749ea9041762b2b5c31c3995cec",
+    "row": {
+      "body_sha256": "eb100f7a594df65a5fd8c56e1bcd8c860407e749ea9041762b2b5c31c3995cec",
+      "citation_path": "am/statute/act-172160/article-1",
+      "document_class": "statute",
+      "expression_date": "2022-12-23",
+      "jurisdiction": "am",
+      "line_number": 1453,
+      "provision_file": "data/corpus/provisions/am/statute/2026-08-30-am-rulespec-source-pack.jsonl",
+      "provision_file_sha256": "7d698f39f898ad91c2c53b1a215651359642b54dcdcadc7d97d4846f3acab2dc",
+      "record_id": "8bbd5473-5a42-5807-a609-07d38f88e8f7",
+      "source_as_of": "2026-08-30",
+      "source_path": "sources/am/statute/2026-08-30-am-rulespec-source-pack/arlis/minimum-wage-172160-2022-12-23.html",
+      "version": "2026-08-30-am-rulespec-source-pack"
+    },
+    "rulespec_root": "rulespec-am/am",
+    "source_as_of": "2026-08-30",
+    "source_sha256": "eb100f7a594df65a5fd8c56e1bcd8c860407e749ea9041762b2b5c31c3995cec"
+  },
+  "tool": "axiom-encode encode --apply",
+  "trace_file": "/home/runner/work/_temp/generated/target/traces/openai-gpt-5.6-terra/am-statute-act-172160-article-1.json",
+  "trace_sha256": "fc475a1ffd283e072b06b682400bf723f29632082ae2c529c35c7a86c315d80f",
+  "validation_execution": {
+    "axiom_encode": {
+      "commit": "d248fc99f8713a12a3dfa91348d992f4c58df43b",
+      "identity_source": "trusted-runtime-attestation",
+      "repository": "github.com/TheAxiomFoundation/axiom-encode",
+      "version": "0.2.1748"
+    },
+    "axiom_rules_engine": {
+      "commit": "fb735bf47a32a4e8af1ecc144c9a1ab382da984b",
+      "repository": "github.com/TheAxiomFoundation/axiom-rules-engine"
+    },
+    "policy_pre_apply": {
+      "pre_apply_content_sha256": "ce88192bb3a1beca537df4924dd86452456837c1ea4665ae795a00887f8a61bb",
+      "pre_apply_file_count": 5,
+      "rulespec_root": "rulespec-am/am",
+      "toolchain_contract_sha256": "2bea336f999972f300df734e9c0418030737be2065c3a4604568f53e1c3147c4",
+      "validation_waiver_set_sha256": "e8caa37b6c2cf4558bfe10119ff8a6eae587e278ab349508f372e0e408d72b6e"
+    },
+    "rulespec_dependencies": [],
+    "rulespec_scope": "full_checkout",
+    "schema": "axiom-encode/apply-validation-execution/v2"
+  },
+  "validation_waiver_set_sha256": "e8caa37b6c2cf4558bfe10119ff8a6eae587e278ab349508f372e0e408d72b6e"
+}
