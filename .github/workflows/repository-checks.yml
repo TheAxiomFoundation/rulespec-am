@@ -1,0 +1,25 @@
+name: Repository Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    uses: TheAxiomFoundation/.github/.github/workflows/validate-rulespec.yml@842c69d6aa62a0d75a4da850fabc3d0df20701d7
+    secrets: inherit
+    with:
+      # Reviewed validator pin for the initial binding. Review and repin in a
+      # dedicated PR before a later protected encoder revision produces AM
+      # RuleSpec content or manifests.
+      axiom-encode-ref: d248fc99f8713a12a3dfa91348d992f4c58df43b
+      # This is the first engine revision with the Armenia AMD currency seed.
+      axiom-rules-engine-ref: fb735bf47a32a4e8af1ecc144c9a1ab382da984b
+      # This commit contains the signed Armenia release selector and registry.
+      axiom-corpus-ref: 4f57160eb68c5941789ffab2ec991cd007a8c15b
+      rulespec-us-ref: 0f291b367bf7e15555f9973112278c5cbf221653
+      validate-roots: auto
+      run-generated-guard: true
+      guard-programs-root: false

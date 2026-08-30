@@ -6,16 +6,16 @@
 This repo stores Republic of Armenia RuleSpec source registry materials, oracle
 references, and encoded policy rules.
 
-## Status: source-backed bootstrap (pre-strict)
+## Status: corpus-bound encoding workspace (strict)
 
 The first Armenian legal sources are in axiom-corpus as two signed ingest
 scopes: the tax-benefit core (`axiom-corpus#628`) and a bounded 2024 evidence
-pack (`axiom-corpus#629`). The proposed `am-rulespec-2026-08-30` selector is
-still unpublished, so this repository intentionally has **no
-`.axiom/toolchain.toml` binding and no RuleSpec content**. The remaining
-sequence is corpus publication → a dedicated gated toolchain/workflow PR →
-supervised encoding. See `docs/encoding-charter.md`. Until the binding lands,
-no RuleSpec content may be added under `am/**`.
+pack (`axiom-corpus#629`). The signed `am-rulespec-2026-08-30` release is
+registered, publicly mirrored, and bound by immutable name and content hash in
+`.axiom/toolchain.toml`; it is not activated into the production serving map.
+This repository intentionally has no RuleSpec content until the supervised
+encoder campaign. See `docs/encoding-charter.md`. Every future content change
+under `am/**` must be generator-produced and carry its signed apply manifest.
 
 ## Do
 

@@ -3,7 +3,7 @@
   "generated_at": "2026-08-30",
   "jurisdiction": "am",
   "validation_year": 2024,
-  "note": "Source inventory only. A listed instrument is not encoded RuleSpec, and the proposed corpus release is not yet published or bound to this repository.",
+  "note": "Source inventory only. A listed instrument is not encoded RuleSpec. The immutable corpus release is signed, registered, publicly mirrored, and repository-bound, but is not activated into the production serving map.",
   "corpus_scopes": [
     {
       "name": "am/statute/2026-08-29-am-taxben-core",
@@ -20,9 +20,12 @@
   ],
   "release_candidate": {
     "name": "am-rulespec-2026-08-30",
-    "status": "proposed_not_published",
+    "status": "registered_publicly_mirrored_not_activated",
     "pull_request": "https://github.com/TheAxiomFoundation/axiom-corpus/pull/630",
-    "selector_sha256": "69cf5d0eb4c8755d9f883fc40f541fb8c1dc3bc37f15ea5b18af8c855b3bf6fd"
+    "publish_workflow_run": "https://github.com/TheAxiomFoundation/axiom-corpus/actions/runs/33320960383",
+    "public_mirror_workflow_run": "https://github.com/TheAxiomFoundation/axiom-corpus/actions/runs/33324183408",
+    "selector_sha256": "69cf5d0eb4c8755d9f883fc40f541fb8c1dc3bc37f15ea5b18af8c855b3bf6fd",
+    "content_sha256": "19f443c7a9deec74b68ddc031d1c74bb2977753538fe2597d4c655609bc79706"
   },
   "instruments": [
     {

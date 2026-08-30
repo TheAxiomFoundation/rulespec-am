@@ -9,12 +9,14 @@ stamp duties, state benefits, and related eligibility rules — with official
 source provenance and comparison references from published fiscal-incidence
 studies.
 
-**Status: source-backed bootstrap.** Signed Armenian source scopes now cover
-the latest consolidated tax-benefit sources, including scheduled expressions,
-and bounded 2024 PIT, funded-pension, and minimum-wage evidence. The immutable
-corpus release is proposed but not yet published, so this repository still
-carries no toolchain binding and no RuleSpec content. The corpus-first path to
-strict validation is documented in `docs/encoding-charter.md`.
+**Status: corpus-bound encoding workspace.** Signed Armenian source scopes now
+cover the latest consolidated tax-benefit sources, including scheduled
+expressions, and bounded 2024 PIT, funded-pension, and minimum-wage evidence.
+The immutable `am-rulespec-2026-08-30` release is signed, registered, publicly
+mirrored, and bound here by name and content hash for strict validation. It is
+not activated into the production serving map. RuleSpec content remains empty
+until the supervised, signed encoder campaign documented in
+`docs/encoding-charter.md`.
 
 ## Scope
 
