@@ -228,7 +228,7 @@ def test_repository_checks_use_reviewed_strict_pins() -> None:
     assert validate["with"] == {
         "axiom-encode-ref": "d248fc99f8713a12a3dfa91348d992f4c58df43b",
         "axiom-rules-engine-ref": (
-            "fb735bf47a32a4e8af1ecc144c9a1ab382da984b"
+            "363c6a6c56f7ad130996b63f7a09cfd4c3d9b021"
         ),
         "axiom-corpus-ref": "4f57160eb68c5941789ffab2ec991cd007a8c15b",
         "rulespec-us-ref": "0f291b367bf7e15555f9973112278c5cbf221653",
