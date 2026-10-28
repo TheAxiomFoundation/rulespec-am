@@ -15,8 +15,9 @@ jobs:
       # dedicated PR before a later protected encoder revision produces AM
       # RuleSpec content or manifests.
       axiom-encode-ref: d248fc99f8713a12a3dfa91348d992f4c58df43b
-      # Engine main at engine#270 (lifetime commencement, #260). It contains the
-      # Armenia AMD currency seed (engine#167) and dated single-version rules (engine#130).
+      # Engine main at engine#270 (lifetime commencement, engine#260). It
+      # contains the Armenia AMD currency seed (engine#167) and dated
+      # single-version rules (engine#130).
       axiom-rules-engine-ref: 363c6a6c56f7ad130996b63f7a09cfd4c3d9b021
       # This commit contains the signed Armenia release selector and registry.
       axiom-corpus-ref: 4f57160eb68c5941789ffab2ec991cd007a8c15b
