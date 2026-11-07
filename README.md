@@ -44,10 +44,10 @@ declarations. The source registry and provenance rules are in
 
 ## Context
 
-Chartered alongside PolicyEngine/microcosm#814 (populace-am): Armenia
-participates in the OECD distributional-accounts expert groups without being
-able to submit results. Microcosm now has a diagnostic Armenian frame calibrated
-to public aggregates using an imported donor support pool; it does not claim
-Armenian household survey microdata. This repository provides the legal-rules
-leg through the Axiom rules engine adapter, beginning with a comparatively
-compact PIT, contribution, and benefit surface.
+Chartered alongside PolicyEngine/microcosm#814: Armenia participates in the OECD
+distributional-accounts expert groups without being able to submit results.
+Microcosm now has a diagnostic Armenian frame calibrated to public aggregates
+using an imported donor support pool; it does not claim Armenian household
+survey microdata. This repository provides the legal-rules leg through the Axiom
+rules engine adapter, beginning with a comparatively compact PIT, contribution,
+and benefit surface.
