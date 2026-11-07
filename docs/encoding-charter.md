@@ -1,6 +1,6 @@
 # Encoding charter
 
-Chartered 2026-08-28 alongside PolicyEngine/microcosm#814 (populace-am).
+Chartered 2026-08-28 alongside PolicyEngine/microcosm#814.
 Armenia is the rules leg of a Microcosm country build: a diagnostic household
 frame calibrated to public demographic, household, and employment aggregates
 from an imported donor support pool, with this repository supplying the
