@@ -55,9 +55,9 @@ FIRST_ENCODER_THAT_CHECKS_MANIFEST_ONLY_CHANGES = (
 SKIPPING_ENCODER_PIN_HISTORY = {
     "d248fc99f8713a12a3dfa91348d992f4c58df43b": "3bbcd0b2b127b2d3dd58775d06c1ed4128329b95",
 }
-# rulespec-am's main when this gate was written. A test checks that the
-# encoders listed above are exactly the ones repository-checks.yml pinned in
-# this commit's history, so the list leaves out no earlier pin.
+# The rulespec-am main commit this gate starts from. A test checks that
+# the encoders listed above are exactly the ones repository-checks.yml pinned
+# in this commit's history, so the list leaves out no earlier pin.
 PIN_HISTORY_RECORDED_THROUGH = "3b67b145d8e20e553e087f5e5798f8bcda417f60"
 
 
