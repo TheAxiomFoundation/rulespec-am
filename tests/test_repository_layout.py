@@ -215,11 +215,6 @@ VALIDATOR_WORKFLOW = "TheAxiomFoundation/.github/.github/workflows/validate-rule
 # the configuration files, so a new pair joins this list in a test-only pull
 # request first, and the pair it replaces leaves after the re-pin lands.
 REVIEWED_VALIDATOR_PINS = {
-    # The initial binding.
-    (
-        "842c69d6aa62a0d75a4da850fabc3d0df20701d7",
-        "d248fc99f8713a12a3dfa91348d992f4c58df43b",
-    ),
     # The pair rulespec-il pins. From axiom-encode#1853 (fa0da5e8) on, the
     # generated guard also checks a change to encoding manifests alone.
     (
