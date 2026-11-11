@@ -210,6 +210,25 @@ def test_toolchain_binds_exact_registered_release_and_waiver_set() -> None:
     ).hexdigest()
 
 
+VALIDATOR_WORKFLOW = "TheAxiomFoundation/.github/.github/workflows/validate-rulespec.yml@"
+# Each reviewed (shared workflow, axiom-encode) pair. A re-pin can change only
+# the configuration files, so a new pair joins this list in a test-only pull
+# request first, and the pair it replaces leaves after the re-pin lands.
+REVIEWED_VALIDATOR_PINS = {
+    # The initial binding.
+    (
+        "842c69d6aa62a0d75a4da850fabc3d0df20701d7",
+        "d248fc99f8713a12a3dfa91348d992f4c58df43b",
+    ),
+    # The pair rulespec-il pins. From axiom-encode#1853 (fa0da5e8) on, the
+    # generated guard also checks a change to encoding manifests alone.
+    (
+        "ac3fe2105d17168e3df7f0a29f2623c65cbd5a4f",
+        "ffa8f3f1d7fef9e26a3d4d2ab0ebe78a40b546cb",
+    ),
+}
+
+
 def test_repository_checks_use_reviewed_strict_pins() -> None:
     workflow = yaml.load(
         (ROOT / ".github/workflows/repository-checks.yml").read_text(),
@@ -220,13 +239,15 @@ def test_repository_checks_use_reviewed_strict_pins() -> None:
         "pull_request": {"branches": ["main"]},
     }
     validate = workflow["jobs"]["validate"]
-    assert validate["uses"] == (
-        "TheAxiomFoundation/.github/.github/workflows/validate-rulespec.yml@"
-        "842c69d6aa62a0d75a4da850fabc3d0df20701d7"
+    assert validate["uses"].startswith(VALIDATOR_WORKFLOW)
+    pins = (
+        validate["uses"].removeprefix(VALIDATOR_WORKFLOW),
+        validate["with"]["axiom-encode-ref"],
     )
+    assert pins in REVIEWED_VALIDATOR_PINS
     assert validate["secrets"] == "inherit"
     assert validate["with"] == {
-        "axiom-encode-ref": "d248fc99f8713a12a3dfa91348d992f4c58df43b",
+        "axiom-encode-ref": pins[1],
         "axiom-rules-engine-ref": (
             "363c6a6c56f7ad130996b63f7a09cfd4c3d9b021"
         ),
